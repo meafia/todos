@@ -46,13 +46,7 @@ class _AddScreenState extends State<AddScreen> {
             onPressed: () {
               if (taskName.isNotEmpty) {
                 Provider.of<TasksData>(context, listen: false)
-                    .addTask(taskName);
-                if (chechBoxValue == true) {
-                  Provider.of<TasksData>(context, listen: false)
-                      .tasksData
-                      .last
-                      .toggleDone();
-                }
+                    .addTask(taskName, chechBoxValue!);
               }
               Navigator.pop(context);
             },
